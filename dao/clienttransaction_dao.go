@@ -2,7 +2,7 @@ package dao
 
 import (
 	"log"
-
+	"fmt"
 	. "github.com/D3n0Duz/db-service/models"
 	mgo "gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
@@ -21,6 +21,7 @@ const (
 
 // Establish a connection to database
 func (m *ClientTransactionDAO) Connect() {
+	fmt.Println("enter main - connecting to mongo")
 	session, err := mgo.Dial(m.Server)
 	if err != nil {
 		log.Fatal(err)

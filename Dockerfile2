@@ -1,0 +1,14 @@
+FROM golang:latest 
+
+WORKDIR $GOPATH/src/
+COPY . .
+RUN go get -d
+
+RUN ls
+RUN go build -o /go/bin/
+
+
+EXPOSE 3000
+
+CMD ["./app.go"]
+

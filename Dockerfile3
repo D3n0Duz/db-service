@@ -1,0 +1,13 @@
+
+FROM scratch
+
+EXPOSE 3000
+ADD . /
+
+
+RUN ls
+
+CMD ["/app"]
+
+
+

@@ -1,14 +1,12 @@
-FROM golang:latest 
+FROM golang:latest
 
-WORKDIR $GOPATH/src/
+WORKDIR $GOPATH/src/hello-app
 COPY . .
 RUN go get -d -v
+RUN go install 
 
-RUN ls
-RUN go build -o app.go
+FROM alpine:latest
+COPY --from=0 /go/bin/hello-app .
+ENV PORT 3000
 
-
-EXPOSE 3000
-
-CMD ["./app.go"]
-
+CMD ["./hello-app"]
