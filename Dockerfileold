@@ -1,0 +1,12 @@
+
+FROM golang:latest
+
+WORKDIR $GOPATH/src/
+
+EXPOSE 3000
+COPY . .
+
+CMD ["main.go"]
+
+
+
