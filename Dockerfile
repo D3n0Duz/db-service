@@ -12,7 +12,8 @@ FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 WORKDIR /app
 COPY --from=0 /go/go-rest-api/go-rest-api .
-RUN ls
+COPY --from=0 /go/go-rest-api/config.toml .
+RUN ls go-rest-api
 EXPOSE 3000
 
 CMD [ "/app/go-rest-api" ]
