@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"gopkg.in/mgo.v2/bson"
-	"fmt"
+	
 
 	"github.com/gorilla/mux"
 	. "github.com/D3n0Duz/db-service/config"
