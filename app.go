@@ -109,7 +109,7 @@ func init() {
 
 // Define HTTP request routes
 func main() {
-	fmt.Printf("Hello go")
+	log.Printf("Hello go")
 	r := mux.NewRouter()
 	r.HandleFunc("/clientTransactions", AllClientTransactionsEndPoint).Methods("GET")
 	r.HandleFunc("/clientTransactions", CreateClientTransactionEndPoint).Methods("POST")
