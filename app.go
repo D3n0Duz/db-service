@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"time"
 
 	"gopkg.in/mgo.v2/bson"
 	"fmt"
@@ -101,6 +102,8 @@ func init() {
 
 	dao.Server = config.Server
 	dao.Database = config.Database
+
+	time.Sleep(30 * time.Second)
 	dao.Connect()
 }
 

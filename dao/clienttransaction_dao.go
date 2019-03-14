@@ -21,12 +21,14 @@ const (
 
 // Establish a connection to database
 func (m *ClientTransactionDAO) Connect() {
-	fmt.Println("enter main - connecting to mongo")
+	log.Println("enter dao - connecting to mongo")
 	session, err := mgo.Dial(m.Server)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("Unable to connect to db", err)
 	}
+	log.Println("Connected to MongoDB!")
 	db = session.DB(m.Database)
+	log.Println("Connected to db!")
 }
 
 // Find list of clientTransactions
